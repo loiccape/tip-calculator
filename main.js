@@ -21,10 +21,7 @@ buttons.forEach((element) => {
     }
 });
 
-numberOfPersonInput.value = 0
-billInput.value = 0
 
-validateInput()
 function validateInput() {
     if (parseInt(numberOfPersonInput.value) === 0) {
 
