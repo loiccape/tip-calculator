@@ -1,162 +1,228 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Space Mono", monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
 }
 
-body{
-    background-color: #C5E4E7;
+body {
+  background-color: #c5e4e7;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-main > :first-child{
-    margin-top: 40px;
-    margin-bottom: 40px;
+main > :first-child {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-section{
-    background-color: white;
-    max-width: 100vw;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    padding: 30px;
+section {
+  background-color: white;
+  max-width: 100vw;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 30px;
 }
 
-.label{
-    font-size: 16px;
-    font-weight: bold;
-    color: #5E7A7D;
-    margin-bottom: 5px;
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5e7a7d;
+  margin-bottom: 5px;
 }
 
-.inputContent{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #F3F9FA;
-    border-radius: 5px;
-    height: 48px;
+.inputContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #f3f9fa;
+  border-radius: 5px;
+  height: 48px;
 }
 
 .inputContent > input[type="number"] {
-    outline: none;
-    border: none;
-    width: 70%;
-    background-color: #F3F9FA;
-    text-align: end;
-    color: #00474B;
-    font-size: 24px;
-    font-weight: bold;
+  outline: none;
+  border: none;
+  width: 70%;
+  background-color: #f3f9fa;
+  text-align: end;
+  color: #00474b;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.tipContent{
-    margin-top: 30px;
+.tipContent {
+  margin-top: 30px;
 }
 
-.tipList{
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(2,1fr);
+.tipList {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .tipList > button,
 .tipList > input {
-    width: 100%;
-    height: 48px;
-    border: none;
-    border-radius: 5px;
-    font-size: 24px;
-    font-weight: bold;
-    
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .tipList > button {
-    background-color: #00474B;
-    color: white;
+  background-color: #00474b;
+  color: white;
 }
 
-.tipList > input{
-    background-color: #F3F9FA;
-    color: #547878;
-    text-align: end;
-    padding-right: 10px;
-    
-    
+.tipList > input {
+  background-color: #f3f9fa;
+  color: #547878;
+  text-align: end;
+  padding-right: 10px;
 }
 
-.peopleContent{
-    margin-top: 30px;
+.peopleContent {
+  margin-top: 30px;
 }
 
-.resultContent{
-    margin-top: 20px;
-    background-color: #00474B;
-    border-radius: 10px;
-    padding: 30px 20px 30px 20px;
+.resultContent {
+  margin-top: 20px;
+  background-color: #00474b;
+  border-radius: 10px;
+  padding: 30px 20px 30px 20px;
 }
 
 .resultContent > div {
-    margin-top:10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.resultContent > div > div > :first-child {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.resultContent > div > div > :last-child {
+  color: #26C2AE;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.resultContent > div > :last-child {
+  color: #26c2ae;
+  font-size: 32px;
+  font-weight: bold;
+}
+.resultContent > :first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tipAmount > :first-child,
+.total > :first-child {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tipAmount > :last-child,
+.total > :last-child {
+  color: #7f9d9f;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.total {
+  margin-top: 20px;
+}
+
+
+.reset {
+  border: none;
+  width: 100%;
+  color: #00474b;
+  background-color: #26c2ae;
+  margin-top: 40px;
+  border-radius: 10px;
+  height: 48px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.errorMessage {
+  display: none;
+  color: #E17457;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.moneyBox{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+.ll{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (min-device-width: 768px) {
+  body {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-}
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: 50px;
+  }
 
-.resultContent > div > div > :first-child{
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.resultContent > div > div > :last-child{
-    color: #7F9D9F;
-    font-family: 13px;
-    font-weight: bold;
-}
-
-.resultContent > div > :last-child{
-    color: #26C2AE;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.reset{
-    border: none;
-    width: 100%;
-    color: #00474B;
-    background-color: #26C2AE;
-    margin-top: 40px;
-    border-radius: 10px;
-    height: 48px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-@media only screen and (min-device-width : 768px) {
-    body{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100vh;
-        margin-top: 50px;
-    }
-
-   section{
+  section {
+    border-radius: 15px;
     width: 920px;
     max-height: 481px;
     display: flex;
     justify-content: space-between;
-   } 
+  }
 
-   section > :first-child{width: 50%; padding: 20px;}
-   section > :last-child{width: 50%;padding: 20px; height: 100%; margin: 0;}
+  section > :first-child {
+    width: 50%;
+    padding: 20px;
+  }
+  section > :last-child {
+    width: 50%;
+    padding: 20px;
+    height: 100%;
+    margin: 0;
+  }
+  .reset {
+    margin-bottom: 20px;
+  }
+
+  .resultContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .resultContent > :first-child {
+    padding: 20px;
+  }
+
+  .tipList {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -1,7 +1,7 @@
 let tipAmountPerPerson = 0;
 let totalToPay = 0;
 let tipPercentage = 0;
-let numberOfPerson = 1; // Par défaut à 1 pour éviter la division par zéro
+let numberOfPerson = 0;
 
 const tipPerPerson = document.getElementById("tipPerPerson");
 const total = document.getElementById("total");
@@ -10,7 +10,7 @@ const buttons = document.querySelectorAll(".btn");
 const customInput = document.getElementById("custom");
 const numberOfPersonInput = document.getElementById("people");
 const resetButton = document.getElementById("resetButton");
-
+const errorMessage = document.getElementById('errorMessage');
 resetButton.addEventListener("click", handleResetButton);
 
 buttons.forEach((element) => {
@@ -21,7 +21,26 @@ buttons.forEach((element) => {
     }
 });
 
+numberOfPersonInput.value = 0
+billInput.value = 0
 
+validateInput()
+function validateInput() {
+    if (parseInt(numberOfPersonInput.value) === 0) {
+
+        errorMessage.innerText = "Can't be zero"
+        errorMessage.style.display = "block"
+    } else if (parseInt(numberOfPersonInput.value) < 0){
+errorMessage.innerText = "Can't be negativ number"
+        errorMessage.style.display = "block"
+    } 
+    else {
+        errorMessage.style.display = 'none';
+    }
+}
+
+  
+  numberOfPersonInput.addEventListener('input', validateInput);
 
 function handleButtonClick(buttonId) {
     tipPercentage = parseFloat(buttonId);
@@ -42,6 +61,7 @@ function handleInputChange(event, type) {
             break;
         case 'people':
             numberOfPerson = value;
+            validateInput()
             break;
     }
     calculateTotal();
@@ -64,8 +84,8 @@ function calculateTotal() {
         tipAmountPerPerson = totalTip / numberOfPerson;
 
         // Met à jour l'affichage
-        tipPerPerson.innerText = tipAmountPerPerson.toFixed(2); // Pourboire par personne
-        total.innerText = totalPerPerson.toFixed(2); // Total à payer par personne
+        tipPerPerson.innerText = "$" + tipAmountPerPerson.toFixed(2); // Pourboire par personne
+        total.innerText = "$" +totalPerPerson.toFixed(2); // Total à payer par personne
     } else {
         tipPerPerson.innerText = "0.00";
         total.innerText = "0.00";

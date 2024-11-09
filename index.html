@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tip Calculator</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playwrite+NL:wght@100..400&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <script defer src="./main.js"></script>
-</head>
-<body>
-  
-  <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playwrite+NL:wght@100..400&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <main>
+      <img src="./images/logo.svg" alt="" />
 
-    <img src="./images/logo.svg" alt="">
-
-    <section>
-      <div>
-      <div class="billContent">
-        <p
-        class="label">Bill</p>
-        <div class="inputContent">
-          <img src="./images/icon-dollar.svg" alt="">
-          <input type="number" id="bill"/>
-        </div>
-      </div>
-
-      <div class="tipContent">
-        <p
-        class="label">Select Tip %</p>
-        <div class="tipList">
-          <button class="btn" id="5">5%</button>
-          <button class="btn" id="10">10%</button>
-          <button class="btn" id="15">15%</button>
-          <button class="btn" id="20">20%</button>
-          <button class="btn" id="50">50%</button>
-          <input type="number" placeholder="Custom" id="custom"/>
-        </div>
-      </div>
-
-      <div class="peopleContent">
-        <p
-        class="label">Number of People</p>
-        <div class="inputContent">
-          <img src="./images/icon-person.svg" alt=""/>
-          <input type="number" id="people"/>
-        </div>
-      </div>
-</div>
-      <div class="resultContent">
-        
-        <div>
-          <div>
-            <p>Tip Amount</p>
-            <p>/ person</p>
+      <section>
+        <div class="leftContent">
+          <div class="billContent">
+            <p class="label">Bill</p>
+            <div class="inputContent">
+              <img src="./images/icon-dollar.svg" alt="" />
+              <input type="number" id="bill" />
+            </div>
           </div>
-          <p id="tipPerPerson"></p>
-        </div>
-        
-        <div>
-          <div>
-            <p>Total</p>
-            <p>/ person</p>
+
+          <div class="tipContent">
+            <p class="label">Select Tip %</p>
+            <div class="tipList">
+              <button class="btn" id="5">5%</button>
+              <button class="btn" id="10">10%</button>
+              <button class="btn" id="15">15%</button>
+              <button class="btn" id="20">20%</button>
+              <button class="btn" id="50">50%</button>
+              <input type="number" placeholder="Custom" id="custom" />
+            </div>
           </div>
-          <p id="total"></p>
+
+          <div class="peopleContent">
+            <div class="ll">
+            <p class="label">Number of People</p>
+            <span id="errorMessage" class="errorMessage">Can't be zero</span>
+            </div>
+            <div class="inputContent">
+              <img src="./images/icon-person.svg" alt="" />
+              <input type="number" id="people" />
+            </div>
+          </div>
         </div>
-        <button class="reset" id="resetButton">RESET</button>
-      </div>
-    </section>
-  </main>
-</body>
+        <div class="resultContent">
+          <div>
+            <div class="moneyBox">
+              <div class="tipAmount">
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <p id="tipPerPerson" class="tipPerPersonText"></p>
+            </div>
+
+            <div class="moneyBox">
+              <div class="total">
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <p id="total" class="totalText"></p>
+            </div>
+          </div>
+            <button class="reset" id="resetButton">RESET</button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
