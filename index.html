@@ -20,33 +20,33 @@
       <section>
         <div class="leftContent">
           <div class="billContent">
-            <p class="label">Bill</p>
+            <p class="label" id="billLabel">Bill</p>
             <div class="inputContent">
               <img src="./images/icon-dollar.svg" alt="" />
-              <input type="number" id="bill" placeholder="0"/>
+              <input type="number" id="bill" placeholder="0" aria-labelledby="billLabel" />
             </div>
           </div>
 
           <div class="tipContent">
-            <p class="label">Select Tip %</p>
+            <p class="label" id="selectLabel">Select Tip %</p>
             <div class="tipList">
               <button class="btn" id="5">5%</button>
               <button class="btn" id="10">10%</button>
               <button class="btn" id="15">15%</button>
               <button class="btn" id="20">20%</button>
               <button class="btn" id="50">50%</button>
-              <input type="number" placeholder="Custom" id="custom" />
+              <input type="number" placeholder="Custom" id="custom" aria-labelledby="selectLabel"/>
             </div>
           </div>
 
           <div class="peopleContent">
             <div class="ll">
-            <p class="label">Number of People</p>
+            <p class="label" id="personLabel">Number of People</p>
             <span id="errorMessage" class="errorMessage">Can't be zero</span>
             </div>
             <div class="inputContent">
               <img src="./images/icon-person.svg" alt="" />
-              <input type="number" id="people" placeholder="0"/>
+              <input type="number" id="people" placeholder="0" aria-labelledby="personLabel"/>
             </div>
           </div>
         </div>
